@@ -1,0 +1,617 @@
+/* TEMPLATE STYLESHEET */
+
+/* Additional 
+
+1. Logo
+2. Greyscale the entire page button function via javascript
+3. Sticky navigation
+4. Buttons highlighted with a contrasted colour when cursor hovers over it
+5. Responsive images
+6. Form Styling
+7. Video header
+
+*/
+
+/*DISCLAIMER: There are big gaps between each section to separate each part so that visually can be seen that it is code for a 
+different section of the website*/
+
+/* These are some suggested groupings for your stylesheet... */
+
+/* Default styling styling for the body.*/
+
+body {
+  font-family: 'Roboto', sans-serif, Arial, Helvetica, sans-serif;
+  /* update with Google font, web safe font and generic fallback */
+  font-size: 100%;
+  /* the default browser font size is 16px */
+  line-height: 1.5rem;
+  /* update to suit your type choices */
+  color: white;
+  /* base text colour - update to suit your design */
+
+}
+
+
+
+/* Improves default font styles for forms  */
+
+input,
+textarea {
+  font-family: 'Roboto', sans-serif, Arial, Helvetica, sans-serif;
+  /* update with Google font, web safe font and generic fallback */
+}
+
+
+
+
+/* box sizing */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+
+/* flexible content images code */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+/* element styling (e.g. standard p, h1, h2, a, etc) */
+
+h1,
+h2 {
+  font-weight: normal;
+  font-family: 'Oswald', Georgia, Times, serif;
+  /* Google font, web safe font, generic fallback */
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 7px;
+  padding: 0.5rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+  margin: 15px;
+  padding: 0.2rem;
+  color: blue;
+  line-height: 1.5em;
+}
+
+h3 {
+  margin: 4rem;
+  padding: 8rem;
+  font-family: 'Oswald', Georgia, Times, serif;
+}
+
+p {
+  margin: 0.3rem;
+  padding: 0.2rem;
+}
+
+
+
+
+
+/* navigation (using flexbox) */
+
+/* small screen code */
+
+/*Added sticky navigation for ease of access so user does not need to constantly 
+scroll up to navigate and z-index to bring navbar to the front interms of placement so
+that it isn't blocked by the view of other things on the web*/
+
+.page-nav {
+  background-color: rgb(1, 79, 134);
+  z-index: 4;
+  position: sticky;
+  top: 0;
+}
+
+/* This creates the border lines of the navbar to show separation of each button*/
+.page-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 3px solid rgb(132, 181, 159);
+  border-right: 3px solid rgb(132, 181, 159);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* This creates the border lines of the navbar to show separation of each button*/
+.page-nav li {
+  flex: 1 1 50%;
+  display: flex;
+  border-bottom: 3px solid rgb(132, 181, 159);
+  border-left: 3px solid rgb(132, 181, 159);
+}
+
+/*This styles the nave bar in terms of font colour, text placent and transition to different colour which is linked 
+further below at page-nav a:hover when cursor is place over that button*/
+
+.page-nav a {
+  padding: 15px 10px;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  transition: all 0.2s ease;
+  color: white;
+}
+
+.page-nav a:hover {
+  background: rgb(169, 214, 229);
+  color: black;
+}
+
+
+/* larger screen code */
+@media screen and (min-width: 760px) {
+  .page-nav ul {
+    flex-wrap: nowrap;
+  }
+
+  .page-nav li {
+    flex: 1 1 25%;
+  }
+}
+
+/*This styles the links in the section where I talk about myself (Aitizaz Ansar) which takes users to the page of reference 
+for further info if they wanted to know even more*/
+.standard a:link {
+  text-decoration: underline;
+  color: black;
+}
+
+.standard a:visited {
+  color: rgb(201, 128, 3);
+  text-decoration:overline;
+}
+
+.standard a:hover {
+  color: yellow;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+
+
+
+
+
+
+/* page header */
+.page-header {
+  background-color: rgb(80, 128, 142);
+  display: flex;
+  min-height: 10vh;
+  height: 70vh;
+  align-items: center;
+  justify-content: center;
+  background-blend-mode: multiply;
+  background-position: bottom;
+  overflow: hidden;
+  position: relative;
+}
+
+/*The code for the video header where it aligns the video to to fit the page header and make sures that all gaps is filled */
+
+.page-header video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+/* Here applied is an overlay to 'tint' the hero video*/
+
+.page-header .scrim {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* or any other colour */
+}
+
+/* This was used as the logo and contact me button was behin so using z index to bring it in front of hero video*/
+.page-header .header-content {
+  z-index: 2;
+  position: relative;
+  /*Line height used as when in mobile view the text was overlapping but with this it fixde the issue and does affect it when 
+  in full screen view on computer*/
+  line-height: 1.5em;
+}
+
+/* This is style code for the contact me button where the hero video is*/
+.header-content a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background: white;
+  color: black;
+  border-radius: 0.2em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+/*The contact me button where the hero video is will transform to a contrasting colour to let user know that their mouse is hovering over it*/
+.header-content a:hover {
+  background-color: black;
+  color: white;
+}
+
+.header-content h1 {
+  text-shadow: 3px 3px blue;
+  font-size: 1.9rem;
+  border-radius: 0.7rem;
+  background-color: #000;
+  margin: auto;
+  width: fit-content;
+}
+
+/* main layout */
+
+/*
+* { 
+    border:1px solid red; 
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 680px;
+}
+
+*/
+
+/* styling for the section content */
+
+.header-content {
+  max-width: 500px;
+  font-size: 1.35rem;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/*here is where my logo that I placed on infront of my hero image, I have made it bigger and maxed
+ the width so it takes up all the space and to be clearly seen in mobile view*/
+.logo {
+  max-width: 100%;
+  height: auto;
+  z-index: 4;
+}
+
+/*This makes sure that the text does not reach to the end of the page making it easy and quicker to read*/
+.container-content {
+  max-width: 70ch;
+  text-align: center;
+  margin: auto;
+}
+
+
+
+
+/*This is the styling for my about me section*/
+
+/*This here styles the page breaks without using <br> tags*/
+.about-me p div {
+  padding: 10px 15px;
+}
+.about-me p div::after {
+  content: '\a';
+  white-space: pre;
+}
+
+
+
+/*This styles the section about my topic I talk about (Technology)*/
+
+.work-experience .container-content a:link {
+  text-decoration:underline;
+  color: rgb(41, 18, 0);
+}
+
+.work-experience .container-content a:visited {
+  color: rgb(201, 128, 3);
+  text-decoration: underline;
+}
+/*When user mouse hovers over link it will change colour and the single underline will be double underline to show that 
+the link is being 'selected' if the user cannot see the colour yellow etc*/
+.work-experience .container-content a:hover {
+  color: yellow;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+
+/*This here styles the page breaks without using <br> tags*/
+.work-experience p div {
+  padding: 10px 15px;
+}
+.work-experience p div::after {
+  content: '\a';
+  white-space: pre;
+}
+
+/*This is to create the effect of where I ask the user a question*/
+.work-experience .question{
+  padding: 20px 15px;
+}
+
+
+
+
+
+/* background colours for sections */
+/*And other bits and bobs of coding for each section*/
+
+.about-me {
+  background-color: rgb(42, 111, 151);
+  padding: 10px;
+}
+
+/*Centers my heading*/
+.about-me h2 {
+  text-align: center;
+}
+
+.work-experience {
+  background-color: rgb(44, 125, 160);
+  padding: 10px;
+}
+
+/*Centers my heading*/
+.work-experience h2 {
+  text-align: center;
+}
+
+.image-gallery {
+  background-color: rgb(70, 143, 175);
+  padding: 10px;
+}
+
+.contact-me {
+  background-color: rgb(97, 165, 194);
+  padding: 10px;
+}
+
+/*Centers my heading*/
+.contact-me h2 {
+  text-align: center;
+}
+
+
+
+
+/* image gallery media queries and size overrides */
+.an-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/*So when in different page size on different devices, the images and caption adjust to the size of the device a user is using*/
+.image-gallery .container-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.image-gallery h2 {
+  text-align: center;
+}
+
+.image-gallery .an-image {
+  margin: 0;
+}
+
+/*This is the styling of the image caption that is in the image gallery*/
+.image-gallery .image-caption {
+  padding: 8px 0 35px 0;
+  color: #000;
+  font-size: 100%;
+}
+
+@media screen and (min-width: 750px) {
+  .image-gallery .image-container {
+    display: flex;
+  }
+/*This creates that white background/border of the images in image gallery*/
+  .image-gallery .an-image {
+    flex: 33%;
+    padding: 20px;
+    background: white;
+  }
+
+  .image-gallery .an-image+.an-image {
+    margin-left: 20px;
+  }
+}
+
+
+
+
+
+/* form styling */
+
+form label {
+  display: block;
+  /* instead of inline */
+  font-size: 1rem;
+  padding-bottom: 0.8em;
+  padding-top: 1em;
+  text-align: left;
+  margin-left: 30px;
+  font-family: 'Sono', Georgia, Times, serif;
+}
+
+form input,
+form textarea {
+  padding: 0.4em 0.3em;
+  font-size: 1.5em;
+  /* these elements do not inherit the font-family from the body tag */
+  font-family: arial, helvetica, sans-serif;
+  /* lighter grey, less visually heavy */
+  border: 1px solid #bbb;
+  border-radius: 0.2em;
+  min-width: 90%;
+  max-width: 90%;
+}
+
+form input[type="submit"] {
+  min-width: 0;
+
+  background-color: brown;
+  border: 0;
+  border-radius: 0.2em;
+  padding: 10px 20px;
+  /* top and bottom, left and right */
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(221, 216, 196);
+  /* I centered the submit button here*/
+  display: block;
+  margin: 0 auto;
+  transition: 0.2s ease;
+  /*added cursor pointer so user know that the box is a button*/
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: red;
+  color: white;
+}
+
+
+
+
+
+/* footer */
+.page-footer {
+  background-color: rgb(137, 194, 217);
+  display: flex;
+  height: 17vh;
+  align-items: center;
+  justify-content: center;
+}
+
+footer a:visited {
+  color: black;
+}
+
+footer a:hover {
+  color: greenyellow;
+}
+
+
+
+
+
+/* This is where the javascript for the 2 functions from task*/
+
+/* Be careful what you copy from here... don't override code you've already got working! */
+
+.page-footer {
+  transition: all 1s ease;
+  /* creates an animation between two states: see https://developer.mozilla.org/en-US/docs/Web/CSS/transition TRANSITIONS always need to be on the INITIAL version of your website CSS. */
+}
+
+h2 {
+  transition: all 2s ease;
+}
+
+img {
+  max-width: 20vw;
+  height: auto;
+  transition: all 2s ease;
+}
+
+/* Be careful what you copy from here... don't override code you've already got working! */
+
+.page-footer {
+  transition: all 1s ease;
+  /* creates an animation between two states: see https://developer.mozilla.org/en-US/docs/Web/CSS/transition TRANSITIONS always need to be on the INITIAL version of your website CSS. */
+}
+
+h2 {
+  transition: all 2s ease;
+}
+
+img {
+  max-width: 20vw;
+  height: auto;
+  transition: all 2s ease;
+}
+
+/* this code only takes effect when the HTML tag has the class of 'js-modify-page' added to it, e.g. <html class="js-modify-page"> */
+
+/*added greyscale filter here just in case the colours were too bright for user or looking at night time to help their eyes*/
+.js-modify-page {
+  font-family: sans-serif;
+  filter: grayscale(100%);
+}
+
+.js-modify-page .page-footer {
+  background: #ddd;
+}
+
+/* added this here as when page changed the nav bar was behind the images making it not readable and further added z-index to fix the placement to make navbar be in from of images etc*/
+.js-modify-page .page-nav {
+  z-index: 4;
+  position: sticky;
+  top: 0;
+}
+
+.js-modify-page h2 {
+  letter-spacing: 1rem;
+}
+
+.js-modify-page img {
+  filter: grayscale(100%);
+}
+
+/* style the button */
+
+button.js-make-something-happen {
+  font-weight: bold;
+  background: red;
+  color: white;
+  border: 0;
+  padding: 10px 10px;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  /*added cursor pointer so user know that the box is a button and adjusted the placement so that it is in the middle of the footer*/
+  cursor: pointer;
+  /*added display block to start a new line and use the available width where I set margin to auto to center it and give it a transition
+  effect when cursor hovers over the button the colour changes to let user know that their cursor is over a button*/
+  display: block;
+  transition: 0.2s ease;
+  margin: auto;
+
+}
+
+/* added a hover effect so user know that button is highlighted for them to click*/
+button.js-make-something-happen:hover {
+  background-color: brown;
+  color: bisque;
+}
